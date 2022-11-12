@@ -45,3 +45,12 @@ def note_update_view(request, pk, *args, **kwargs):
             return redirect('main')
         else:
             return render(request, 'update.html', context={'form': form, 'note': note})
+
+
+def delete_note(request, pk, *args, **kwargs):
+    note = get_object_or_404(NoteModel, pk=pk)
+    if request.method == 'GET':
+        return render(request, 'delete.html', context={'note': note})
+    elif request.method == 'POST':
+        note.delete()
+        return redirect('main')

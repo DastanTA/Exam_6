@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Delete{% endblock %}
+
+{% block content %}
+    <br><br><br><h3>Вы точно хотите удалить запись "{{ note }}"?</h3><br><br>
+    <form method="POST" action="{% url "delete_note" note.id %}" class="text-center">
+        {% csrf_token %}
+        <p><input type="submit" value="Да"></p>
+        <p><a class="delete_no_link" href="{% url "main" %}">Нет</a></p>
+    </form>
+{% endblock %}
