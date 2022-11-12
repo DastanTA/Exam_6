@@ -4,6 +4,10 @@
 Main page
 {% endblock %}
 
+{% block menu %}
+    <li><a href="{% url 'create_note' %}">Добавить запись</a></li>
+{% endblock %}
+
 {% block content %}
     <h3>Гостевая книга</h3><br>
 
