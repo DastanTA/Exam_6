@@ -8,6 +8,7 @@ def main_page(request):
     context = {'notes': notes}
     return render(request, 'index.html', context)
 
+
 def note_create_view(request, *args, **kwargs):
     if request.method == "GET":
         form = NoteForm()
@@ -23,3 +24,24 @@ def note_create_view(request, *args, **kwargs):
             return redirect('main')
         else:
             return render(request, 'create.html', context={'form': form})
+
+
+def note_update_view(request, pk, *args, **kwargs):
+    note = get_object_or_404(NoteModel, pk=pk)
+    if request.method == "GET":
+        form = NoteForm(initial={
+            'author': note.author,
+            'email': note.email,
+            'note': note.note
+        })
+        return render(request, 'update.html', context={'form': form, 'note': note})
+    elif request.method == "POST":
+        form = NoteForm(data=request.POST)
+        if form.is_valid():
+            note.author = form.cleaned_data.get('author')
+            note.email = form.cleaned_data.get('email')
+            note.note = form.cleaned_data.get('note')
+            note.save()
+            return redirect('main')
+        else:
+            return render(request, 'update.html', context={'form': form, 'note': note})
