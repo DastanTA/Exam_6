@@ -5,14 +5,16 @@ from guestbook.forms import NoteForm, SearchForm
 
 def main_page(request):
     if request.method == "POST":
-        form = SearchForm(data=request.POST)
-        if form.is_valid():
-            notes = NoteModel.objects.all().order_by('-created_at').filter(status='active', author=form.cleaned_data.get('author'))
-            context = {'notes': notes, 'form': form}
+        form_search = SearchForm(data=request.POST)
+        form = NoteForm()
+        if form_search.is_valid():
+            notes = NoteModel.objects.all().order_by('-created_at').filter(status='active', author=form_search.cleaned_data.get('author'))
+            context = {'notes': notes, 'form_search': form_search, 'form': form}
             return render(request, 'index.html', context)
-    form = SearchForm()
+    form_search = SearchForm()
+    form = NoteForm()
     notes = NoteModel.objects.all().order_by('-created_at').filter(status='active')
-    context = {'notes': notes, 'form': form}
+    context = {'notes': notes, 'form_search': form_search, 'form': form}
     return render(request, 'index.html', context)
 
 

@@ -11,8 +11,7 @@ Main page
 {% block search %}
 <form action="{% url 'main' %}" method="POST" class="d-flex" role="search">
     {% csrf_token %}
-{#    <input class="form-control me-2" type="search" placeholder="автор" aria-label="Search">#}
-    <p>{{ form.author }}</p>
+    <p>{{ form_search.author }}</p>
     <input type="submit" value="Найти">
 </form>
 {% endblock %}
@@ -32,4 +31,6 @@ Main page
           </div>
         </div>
     {% endfor %}
+
+    {% include 'create.html' %}
 {% endblock %}
