@@ -1,11 +1,18 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from guestbook.models import NoteModel, STATUS_CHOICES
-from guestbook.forms import NoteForm
+from guestbook.models import NoteModel
+from guestbook.forms import NoteForm, SearchForm
 
 
 def main_page(request):
+    if request.method == "POST":
+        form = SearchForm(data=request.POST)
+        if form.is_valid():
+            notes = NoteModel.objects.all().order_by('-created_at').filter(status='active', author=form.cleaned_data.get('author'))
+            context = {'notes': notes, 'form': form}
+            return render(request, 'index.html', context)
+    form = SearchForm()
     notes = NoteModel.objects.all().order_by('-created_at').filter(status='active')
-    context = {'notes': notes}
+    context = {'notes': notes, 'form': form}
     return render(request, 'index.html', context)
 
 

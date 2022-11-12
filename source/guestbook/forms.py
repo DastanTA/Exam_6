@@ -9,3 +9,7 @@ class NoteForm(forms.Form):
     author = forms.CharField(max_length=40, required=True, label='Автор')
     email = forms.EmailField(required=True, label='Почта')
     note = forms.CharField(max_length=3000, required=True, label='Запись', widget=widgets.Textarea(attrs={"cols":24, "rows":5}))
+
+
+class SearchForm(forms.Form):
+    author = forms.CharField(max_length=40, required=False, label='Автор')
