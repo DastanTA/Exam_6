@@ -1,0 +1,92 @@
+[
+{
+    "model": "guestbook.notemodel",
+    "pk": 1,
+    "fields": {
+        "author": "Dastan",
+        "email": "dastan.turatbekov@gmail.com",
+        "note": "Testing how it looks",
+        "created_at": "2022-11-12T05:59:47.998Z",
+        "updated_at": "2022-11-12T05:59:47.998Z",
+        "status": "active"
+    }
+},
+{
+    "model": "guestbook.notemodel",
+    "pk": 2,
+    "fields": {
+        "author": "James",
+        "email": "james.bond@mi6.us",
+        "note": "Flash royal. Time not to Die. \r\nDie Hard",
+        "created_at": "2022-11-12T06:16:53.126Z",
+        "updated_at": "2022-11-12T06:16:53.126Z",
+        "status": "active"
+    }
+},
+{
+    "model": "guestbook.notemodel",
+    "pk": 3,
+    "fields": {
+        "author": "Jason",
+        "email": "jason.born@christ.org",
+        "note": "Holy Christ, it's Jason Born",
+        "created_at": "2022-11-12T06:17:49.803Z",
+        "updated_at": "2022-11-12T06:17:49.803Z",
+        "status": "active"
+    }
+},
+{
+    "model": "guestbook.notemodel",
+    "pk": 4,
+    "fields": {
+        "author": "Gulchapchap",
+        "email": "Gulya87@mail.ru",
+        "note": "Ai, akchany kachan beresin?!",
+        "created_at": "2022-11-12T06:18:41.105Z",
+        "updated_at": "2022-11-12T06:18:41.105Z",
+        "status": "blocked"
+    }
+},
+{
+    "model": "guestbook.notemodel",
+    "pk": 5,
+    "fields": {
+        "author": "Mars",
+        "email": "ares@greece.eu",
+        "note": "Deimos, you'll be late to school!\r\nFobos, help your brother!",
+        "created_at": "2022-11-12T06:20:36.097Z",
+        "updated_at": "2022-11-12T06:20:36.097Z",
+        "status": "active"
+    }
+},
+{
+    "model": "guestbook.notemodel",
+    "pk": 6,
+    "fields": {
+        "author": "Zurab",
+        "email": "zurab_okna@list.ru",
+        "note": "Отличные окна поставлю, брат. Не пожалеешь, мамой клинус.",
+        "created_at": "2022-11-12T06:21:42.025Z",
+        "updated_at": "2022-11-12T06:21:42.025Z",
+        "status": "blocked"
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$390000$oItd0YB782HKcCU1KlKEFt$eZV/OW47WatDKkXLiZkOLPl4JOp1qtP6We0Ur92dnSo=",
+        "last_login": "2022-11-12T06:02:27.785Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2022-11-12T06:01:55.069Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}
+]
